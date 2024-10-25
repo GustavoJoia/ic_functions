@@ -26,3 +26,20 @@ function latLocal(callback) {
         callback(null);
     }
 }
+
+function hoje() {
+    const h = new Date();
+    const inicioDoAno = new Date(h.getFullYear(), 0, 0); // 0 para janeiro
+    const diff = h - inicioDoAno; // diferença em milissegundos
+    const diaDoAno = Math.floor(diff / (1000 * 60 * 60 * 24)); // converte para dias
+    return diaDoAno;
+}
+
+function tsa(hora_padrao,et,correcao_latitude,hv){
+  let ds = hora_padrao-(hv*(60*1000));
+  let equacao_tempo = et(hoje());
+  let 
+}
+
+console.log('Tempo solar aparente = Tempo padrão local + Equação de tempo +- 4(Longitude Padrão - Longitude Local)');
+console.log('TSA = '+hora_atual+' ');
